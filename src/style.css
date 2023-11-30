@@ -1,0 +1,233 @@
+* {margin: 0; padding: 0; box-sizing: border-box;}
+
+:root {
+    --pancrea-width: 300px;
+    --livercell-width: 20%;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+}
+
+#portrait_phone_overlay {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    display: none;
+    place-content: center;
+    background-color: white;
+    z-index: 100;
+}
+
+main {
+    display: grid;
+    place-content: center;
+    height: 90vh;
+}
+
+#dablock {
+    width: 90vw;
+    aspect-ratio: 2.2;
+    margin: auto;
+    position: relative
+}
+
+#dablock > .element {
+    position: absolute;
+}
+
+
+.element {
+    position: relative;
+    width: fit-content;
+}
+
+.element button {
+    border: 0;
+    outline: 0;
+    box-shadow: none;
+    background-color: transparent;
+    color: black;
+    position: relative;
+    cursor: pointer;
+    transition: 200ms;
+    text-shadow: 0px 0px 5px black;
+    width: 100%;
+    width: -moz-fit-content;
+}
+
+.element button > img {
+    width: 50%;
+}
+
+.element button:hover {
+    transform: scale(1.025);
+    -webkit-filter: drop-shadow(5px 5px 25px rgba(0,0,0,0.5));
+    filter: drop-shadow(5px 5px 25px rgba(0, 0, 0, 0.5));
+}
+.element button:focus {
+    filter: drop-shadow(0px 0px 5px red);
+}
+
+.element > p {
+    display: none;
+}
+
+.element > button:focus + p {
+    position: absolute;
+    top: -0%;
+    left: 100%;
+    content: 'hey';
+    color: white;
+    background-color: #212121;
+    padding: 3px 7px;
+    border-radius: 5px;
+
+    display: block;
+
+}
+
+#dablock > span {
+    position: absolute;
+    left: calc(100% - 50px);
+    top: 0;
+
+}
+
+#dablock > span > input{
+    width: 50px;
+}
+
+#pancrea {
+    left: calc(50% - var(--pancrea-width) / 2);
+}
+#pancrea > button > img {
+    width: var(--pancrea-width);
+}
+
+#left_vessel {
+    left: calc(25%);
+    top: calc(15%);
+}
+
+#left_vessel > button > img{
+    transform: scaleX(-1);
+}
+
+#left_vessel > #glu-container {
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 18px);
+    width: 20px;
+    height: 50px;
+}
+
+
+#right_vessel {
+    left: calc(65%);
+    top: 15%;
+}
+
+#right_vessel #inc-container {
+    position: absolute;
+    top: -50px;
+    left: calc(50% - 5px);
+    width: 30px;
+    height: 50px;
+    border: 1px solid black;
+}
+
+
+#liver_cell {
+
+}
+
+#liver_cell > button > img {
+    width: var(--livercell-width);
+}
+
+.glu {
+    z-index: 100;
+    position: absolute;
+    left: 0;
+
+    animation: insuline 10s linear 1s 1;
+}
+
+.glu > span{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 200;
+    border-radius: 50px;
+    width: 10px;
+    height: 10px;
+    background-color: red;
+}
+
+header {
+    width: 100vw;
+    padding: 5px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    place-items: center;
+    background-color: blue;
+    color: white;
+    height: 10vh;
+}
+
+#ui > button {
+    border: 0;
+    outline: 0;
+
+    padding: 1px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+}
+
+.greenbtns {
+    background-color: rgb(0, 104, 0);
+}
+.redbtns {
+    background-color: rgb(167, 0, 0);
+}
+
+
+@keyframes insuline {
+    0% {
+        top: 50%;
+    }
+    20% {
+        top: 100%;
+    }
+    40% {
+        top: 200%;
+        left: 20%;
+    }
+    60% {
+        top: 240%;
+        left: 40%;
+        rotate: -35deg;
+    }
+    80% {
+        top: 300%;
+        left: 110%;
+        rotate: -90deg;
+    }
+    100% {
+        top: 360%;
+        left: 280%;
+        rotate: 0deg;
+        display: none;
+    }
+}
+
+@media (orientation: portrait) {
+    #portrait_phone_overlay {
+        display: grid;
+    }
+}
