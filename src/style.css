@@ -1,8 +1,9 @@
 * {margin: 0; padding: 0; box-sizing: border-box;}
 
 :root {
-    --pancrea-width: 300px;
+    --pancrea-width: 30%;
     --livercell-width: 20%;
+    --bloodvessel-width: 15%;
 }
 
 body {
@@ -102,14 +103,17 @@ main {
 
 #pancrea {
     left: calc(50% - var(--pancrea-width) / 2);
+    width: var(--pancrea-width) !important;
+
 }
 #pancrea > button > img {
-    width: var(--pancrea-width);
+    width: 100%;
 }
 
 #left_vessel {
-    left: calc(25%);
-    top: calc(15%);
+    width: var(--bloodvessel-width);
+    left: calc(22%);
+    top: calc(20%);
 }
 
 #left_vessel > button > img{
@@ -126,26 +130,29 @@ main {
 
 
 #right_vessel {
-    left: calc(65%);
-    top: 15%;
+    width: var(--bloodvessel-width);
+    left: calc(62%);
+    top: 20%;
 }
 
-#right_vessel #inc-container {
+#right_vessel #ins-container {
     position: absolute;
     top: -50px;
     left: calc(50% - 5px);
     width: 30px;
     height: 50px;
-    border: 1px solid black;
 }
 
 
 #liver_cell {
+    width: var(--livercell-width);
 
+    left: calc(50% - var(--livercell-width) / 2);
+    top: 50%;
 }
 
 #liver_cell > button > img {
-    width: var(--livercell-width);
+    rotate: -90deg;
 }
 
 .glu {
@@ -153,7 +160,7 @@ main {
     position: absolute;
     left: 0;
 
-    animation: insuline 10s linear 1s 1;
+    animation: insuline 5s linear 1s 1;
 }
 
 .glu > span{
@@ -167,6 +174,26 @@ main {
     background-color: red;
 }
 
+.ins {
+    z-index: 100;
+    position: absolute;
+    left: 0;
+
+    animation: insuline 5s linear 1s 1;
+}
+
+.ins > span{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 200;
+    border-radius: 50px;
+    width: 10px;
+    height: 10px;
+    background-color: blue;
+}
+
+
 header {
     width: 100vw;
     padding: 5px;
@@ -179,7 +206,7 @@ header {
     height: 10vh;
 }
 
-#ui > button {
+#ui > div >button {
     border: 0;
     outline: 0;
 
@@ -194,6 +221,22 @@ header {
 }
 .redbtns {
     background-color: rgb(167, 0, 0);
+}
+
+#bloodsugar {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 15px;
+    width: 75px;
+    height: 75px;
+    display: grid;
+    place-content: center;
+    font-weight: bolder;
+    font-size: 2rem;
 }
 
 

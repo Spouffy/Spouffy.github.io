@@ -15,23 +15,30 @@
         </h1>
     </div>
     <header>
-        <h1>Machrou3 Fi ouloum hawl el risala el 3asabiya</h1>
+        <h1>مشروع حول</h1>
     </header>
     <main>
         <div id="ui">
-            <span id="bloodsuger"></span>
-            <button class="greenbtns" onclick="addSugar(1)">
-                +1g/l
-            </button>
-            <button class="greenbtns"onclick="addSugar(0.1)">
-                +0.1g/l
-            </button>
-            <button class="redbtns" onclick="useSugar(0.1)">
-                -0.1g/l
-            </button>
-            <button class="redbtns" onclick="useSugar(1)">
-                -1g/l
-            </button>
+            <span id="bloodsugar"> <i>g/l</i>
+            </span>
+            <div>
+                <button class="greenbtns" onclick="addSugar(10)">
+                    +1g/l
+                </button>
+                <button class="greenbtns"onclick="addSugar(1)">
+                    +0.1g/l
+                </button>
+            </div>
+
+            <div>
+                <button class="redbtns" onclick="useSugar(1)">
+                    -0.1g/l
+                </button>
+                <button class="redbtns" onclick="useSugar(10)">
+                    -1g/l
+                </button>
+            </div>
+
         </div>
         <div id="dablock">
             <div class="element" id="pancrea">
@@ -41,7 +48,7 @@
                 <p>Dis iz da pankrea</p>
             </div>
             <div class="element" id="right_vessel">
-                <div id="inc-container">
+                <div id="ins-container">
 
                 </div>
                 <button>
@@ -51,11 +58,6 @@
             </div>
             <div class="element" id="left_vessel">
                 <div id="glu-container">
-                    <div class="glu">
-                        <span>
-
-                        </span>
-                    </div>
                 </div>
                 <button>
                     <img src="./img/blood.png" alt="">
