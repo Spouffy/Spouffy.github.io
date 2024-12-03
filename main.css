@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap");
+
+body {
+    display: grid;
+    place-content: center;
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.container {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.background {
+    background-image: radial-gradient(ellipse at 70% 95%,
+            black 0%,
+            #040117 30% 60%,
+            black);
+
+    animation: show 3s;
+}
+
+.background .star {
+    position: absolute;
+    max-width: var(--width);
+    aspect-ratio: 1;
+    opacity: 0.3;
+}
+
+#overlay .star {
+    opacity: 1;
+    animation: glowingstars 2s linear infinite;
+    animation-delay: var(--delay);
+}
+
+#overlay {
+    height: 100%;
+    -webkit-mask-image: -webkit-radial-gradient(var(--x, 50%) var(--y, 50%),
+            rgba(0, 0, 0, 1) 00%,
+            rgba(0, 0, 0, 0) 30%);
+
+    mask-image: -webkit-radial-gradient(var(--x, 50%) var(--y, 50%),
+            rgba(0, 0, 0, 1) 00%,
+            rgba(0, 0, 0, 0) 30%);
+}
+
+.main {
+    height: 100%;
+    color: var(--color-fg);
+    background: transparent;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    backdrop-filter: blur(0px);
+}
+
+.main #title {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-size: 3rem;
+    font-weight: bold;
+    animation: glow 8s linear infinite;
+}
+
+.main #middle-box {
+    text-align: center;
+    width: 50%;
+}
+
+.main #middle-box p {
+    font-family: "Atkinson Hyperlegible", sans-serif;
+    font-weight: 400;
+    opacity: 0.8;
+    margin: 10px;
+}
+
+.main #buttons-box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+
+    pointer-events: none;
+}
+
+.main #buttons-box button {
+    padding: 5px;
+    border: 0;
+    box-shadow: 0px 0px 10px -5px rgba(255, 255, 255, 0.6);
+
+    height: 100%;
+    width: 5vw;
+    min-width: 20px;
+    background: transparent;
+    backdrop-filter: blur(2px);
+
+    color: white;
+}
+
+@keyframes glowingstars {
+    0% {
+        filter: drop-shadow(0px 0px 1px white);
+    }
+
+    20% {
+        filter: drop-shadow(0px 0px 4px white);
+    }
+
+    50% {
+        filter: drop-shadow(0px 0px 2px white);
+    }
+
+    90% {
+        filter: drop-shadow(0px 0px 8px white);
+    }
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6);
+    }
+
+    50% {
+        text-shadow:
+            0px 0px 30px rgba(255, 255, 255, 0.6),
+            0px 0px 10px white;
+    }
+
+    100% {
+        text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.6);
+    }
+}
+
+@keyframes show {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
